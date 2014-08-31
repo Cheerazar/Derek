@@ -7,6 +7,7 @@ class CreateBreakouts < ActiveRecord::Migration
       t.integer :user_id
       t.string :location
       t.datetime :time
+      t.string :request_type
       t.timestamps
     end
   end
