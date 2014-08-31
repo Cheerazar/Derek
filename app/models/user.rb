@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_one :teacher
+  has_one :instructor, :through => :teachers
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
