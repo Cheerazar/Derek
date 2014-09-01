@@ -1,0 +1,12 @@
+.comments_verticle {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+}
+
+.new_comment {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,12 @@
+<div class="new_comment">
+  <ul class="comments_verticle">
+    <li><%= image_tag avatar_url(user) %></li>
+    <li>Name_Gunneri's JOB</li>
+    <li>cohort_Gunneri's JOB</li>
+  </ul>
+
+  <%= form_for :comment, method: 'post' do |f| %>
+    <%= f.label :body, "Comment" %><br>
+    <%= f.text_area :body, cols: 75, rows: 3, placeholder: "SPECIFIC, actionable, kind..."  %>
+  <% end %>
+</div>
