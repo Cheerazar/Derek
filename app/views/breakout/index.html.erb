@@ -3,7 +3,11 @@
 <% else %>
   <ul>
     <% @requests.each do |request| %>
-      <li><%= request.title %></li>
+      <% if user_signed_in? %>
+      <li><%= link_to request.title, user_breakout_path(request.user_id, request.id) %>, request.category</li>
+      <% else %>
+        <li><%= request.title %></li>
+      <% end %>
     <% end %>
   </ul>
 <% end %>
@@ -13,7 +17,12 @@
 <% else %>
   <ul>
     <% @offers.each do |offer| %>
-      <li><%= offer.title %></li>
+      <% if user_signed_in? %>
+        <%= link_to offer.title, user_breakout_path(offer.user_id, offer.id) %>
+      <% else %>
+        <li><%= offer.title %></li>
+      <% end %>
+
     <% end %>
   </ul>
 <% end %>

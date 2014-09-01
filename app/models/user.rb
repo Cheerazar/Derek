@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :breakouts
   has_many :comments, :through => :breakouts
   has_many :signups, :through => :breakouts
 
