@@ -2,7 +2,7 @@
   <h1><%= @breakout.title %></h1>
   <p><%= @breakout.body %></p>
   <ul>
-    <% @breakout.comments.each |comment| %>
+    <% @breakout.comments.each do |comment| %>
       <li><%= comment.body %></li>
     <% end %>
   </ul>
