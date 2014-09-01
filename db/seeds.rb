@@ -23,7 +23,7 @@ end
 
 breakouts_ids.times do
   Breakout.create(  category: ['Ruby', 'Javascript', 'Rails'].sample,
-                    title: Faker::Lorem.sentence,
+                    title: Faker::Hacker.say_something_smart,
                     body: Faker::Lorem.paragraph,
                     user_id: rand(1..user_ids),
                     location: ['San Francisco', 'Chicago', 'New York'].sample,
