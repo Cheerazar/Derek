@@ -21,8 +21,9 @@ ActiveRecord::Schema.define(version: 20140831193828) do
     t.string   "title"
     t.text     "body"
     t.integer  "user_id"
-    t.integer  "teacher_id"
     t.string   "location"
+    t.datetime "time"
+    t.string   "request_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -36,11 +37,6 @@ ActiveRecord::Schema.define(version: 20140831193828) do
   create_table "signups", force: true do |t|
     t.integer "user_id"
     t.integer "breakout_id"
-  end
-
-  create_table "teachers", force: true do |t|
-    t.integer "session_id"
-    t.integer "instructor_id"
   end
 
   create_table "users", force: true do |t|
