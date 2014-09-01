@@ -1,11 +1,16 @@
 <% if user_signed_in? %>
   <h1><%= @breakout.title %></h1>
   <p><%= @breakout.body %></p>
+  <p>Location: <%= @breakout.location %>
+  <h2>Comments:</h2>
   <ul>
     <% @breakout.comments.each do |comment| %>
       <li><%= comment.body %></li>
     <% end %>
+    <li><%= current_user.email %></li>
   </ul>
+
+  <%= render 'breakouts/comment_new', locals: { comment: Comment.new, user: current_user } %>
 <% else %>
   <h1>Please sign in to view the details of this breakout.</h1>
 <% end %>
