@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users, :path => 'accounts'
 
-  root 'breakout#index'
+  root 'breakouts#index'
 
   resources :users do
     resources :breakouts do
