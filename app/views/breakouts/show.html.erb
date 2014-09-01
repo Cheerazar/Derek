@@ -10,7 +10,7 @@
     <li><%= current_user.email %></li>
   </ul>
 
-  <%= render 'breakouts/comment_new', locals: { comment: Comment.new, user: current_user } %>
+  <%= render 'breakouts/comment_new', locals: { comment: Comment.new, user: current_user, breakout: @breakout } %>
 <% else %>
   <h1>Please sign in to view the details of this breakout.</h1>
 <% end %>

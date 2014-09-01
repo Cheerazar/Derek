@@ -5,8 +5,9 @@
     <li><%= current_user.cohort %></li>
   </ul>
 
-  <%= form_for :comment, method: 'post' do |f| %>
+  <%= form_for :comment, method: 'post', url: "/users/#{current_user.id}/breakouts/#{@breakout.id}/comments" do |f| %>
     <%= f.label :body, "Comment" %><br>
-    <%= f.text_area :body, cols: 75, rows: 3, placeholder: "SPECIFIC, actionable, kind..."  %>
+    <%= f.text_area :body, cols: 75, rows: 3, placeholder: "SPECIFIC, actionable, kind..."  %><br />
+    <%= f.submit %>
   <% end %>
 </div>
