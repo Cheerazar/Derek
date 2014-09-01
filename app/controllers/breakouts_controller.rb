@@ -1,4 +1,4 @@
-class BreakoutController < ApplicationController
+class BreakoutsController < ApplicationController
 
   def index
     breakouts = Breakout.all
@@ -16,6 +16,7 @@ class BreakoutController < ApplicationController
   end
 
   def show
+    @breakout = Breakout.find(params[:id])
   end
 
   def update
