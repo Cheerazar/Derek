@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  include Gravtastic
+  gravtastic
+
   has_many :breakouts
   has_many :comments
   has_many :signups
