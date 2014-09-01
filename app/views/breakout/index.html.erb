@@ -1,4 +1,31 @@
-<h1>Hello</h1>
 <% unless user_signed_in? %>
  <%= render 'layouts/about' %>
+<% end %>
+
+<% if @requests.nil? %>
+  <h1>There are currently no requests!</h1>
+<% else %>
+  <ul>
+    <% @requests.each do |request| %>
+      <% if user_signed_in? %>
+      <li><%= link_to request.title, user_breakout_path(request.user_id, request.id) %>, request.category</li>
+      <% else %>
+        <li><%= request.title %></li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if @offers.nil? %>
+  <h1>There are currently no offers!</h1>
+<% else %>
+  <ul>
+    <% @offers.each do |offer| %>
+      <% if user_signed_in? %>
+        <%= link_to offer.title, user_breakout_path(offer.user_id, offer.id) %>
+      <% else %>
+        <li><%= offer.title %></li>
+      <% end %>
+    <% end %>
+  </ul>
 <% end %>
