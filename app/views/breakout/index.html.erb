@@ -1,3 +1,7 @@
+<% unless user_signed_in? %>
+ <%= render 'layouts/about' %>
+<% end %>
+
 <% if @requests.nil? %>
   <h1>There are currently no requests!</h1>
 <% else %>
@@ -22,7 +26,6 @@
       <% else %>
         <li><%= offer.title %></li>
       <% end %>
-
     <% end %>
   </ul>
 <% end %>

@@ -1,4 +1,5 @@
 class BreakoutController < ApplicationController
+
   def index
     breakouts = Breakout.all
     @requests, @offers = [], []
