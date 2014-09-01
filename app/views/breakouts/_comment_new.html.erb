@@ -1,8 +1,8 @@
 <div class="new_comment">
   <ul class="comments_verticle">
-    <li><%= image_tag avatar_url(user) %></li>
-    <li>Name_Gunneri's JOB</li>
-    <li>cohort_Gunneri's JOB</li>
+
+    <li><%= "#{current_user.first_name} #{current_user.last_name}" %></li>
+    <li><%= current_user.cohort %></li>
   </ul>
 
   <%= form_for :comment, method: 'post' do |f| %>
